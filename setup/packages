@@ -1,0 +1,47 @@
+#!/bin/bash
+
+set -eux
+
+if [[ $(uname) = 'Darwin' ]]; then
+
+  which brew || ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+  brew update
+
+  which git || brew install git
+
+  which ag || brew install the_silver_searcher
+
+  which tmux || brew install tmux
+
+  which nvim || brew install neovim
+
+  [[ $SHELL = "/bin/zsh" ]] || (
+    brew install zsh;
+    sudo chsh -s /bin/zsh `whoami`
+  )
+
+else
+
+  sudo apt-get update -y
+
+  sudo apt-get install -y software-properties-common
+
+  which git || sudo apt-get install -y git
+
+  which ag || (
+  	sudo apt-get install -y silversearcher-ag;
+  	sudo dpkg-divert --local --divert /usr/bin/ag --rename --add /usr/bin/silversearcher-ag
+  )
+
+  which tmux || sudo apt-get install -y tmux
+
+  which zsh || sudo apt-get install -y zsh
+
+  which neovim || (
+    sudo add-apt-repository ppa:neovim-ppa/stable;
+    sudo apt-get update -y;
+    sudo apt-get install -y neovim
+  )
+
+fi

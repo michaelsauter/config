@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -u
+
+for source in $(find ./*/linked -type f); do
+  target=~/$(basename "$source")
+  echo "ln -s $source $target"
+  ln -s $source $target
+done
+
+echo "ln -s /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime"
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
