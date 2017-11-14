@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Packages
 set -eux
 
 if [[ $(uname) = 'Darwin' ]]; then
@@ -30,8 +31,8 @@ else
   which git || sudo apt-get install -y git
 
   which ag || (
-  	sudo apt-get install -y silversearcher-ag;
-  	sudo dpkg-divert --local --divert /usr/bin/ag --rename --add /usr/bin/silversearcher-ag
+    sudo apt-get install -y silversearcher-ag;
+    sudo dpkg-divert --local --divert /usr/bin/ag --rename --add /usr/bin/silversearcher-ag
   )
 
   which tmux || sudo apt-get install -y tmux
@@ -45,3 +46,15 @@ else
   )
 
 fi
+
+# Symlinks
+set +ex
+
+for source in $(find ./*/linked -type f); do
+  target=~/$(basename "$source")
+  echo "ln -s $source $target"
+  ln -s $source $target
+done
+
+echo "ln -s /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime"
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime

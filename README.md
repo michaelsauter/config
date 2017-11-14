@@ -6,8 +6,7 @@ Minimal terminal configuration. Installs basic packages, ZSH and tmux.
 
 * `git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell`
 * `git clone https://github.com/michaelsauter/config.git ~/.config/msauter`
-* `~/.config/msauter/setup/packages`
-* `~/.config/msauter/setup/symlinks`
+* `~/.config/msauter/install`
 
 # Customization
 
