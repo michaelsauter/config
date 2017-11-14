@@ -13,8 +13,8 @@ Minimal terminal configuration. Installs basic packages, ZSH and tmux.
 Files located at `~/.config/msauter/custom/sourced` are autoloaded and ignored
 by git.
 
-Files located at `~/.config/msauter/custom/linked` are symlinked to `$HOME` and
-ignored by git.
+Files located at `~/.config/msauter/custom/linked` are symlinked to `$HOME` by
+the `ìnstall` script and ignored by git.
 
 # Vim
 
