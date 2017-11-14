@@ -52,9 +52,9 @@ set +ex
 
 for source in $(find ~/.config/msauter/*/linked -type f); do
   target=~/$(basename "$source")
-  echo "ln -s $source $target"
-  ln -s $source $target
+  echo "ln -sf $source $target"
+  ln -sf $source $target
 done
 
-echo "ln -s /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime"
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+echo "ln -sf /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime"
+ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
