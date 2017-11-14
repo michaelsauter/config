@@ -12,11 +12,14 @@ git clone https://github.com/michaelsauter/config.git ~/.config/msauter
 
 # Customization
 
-Files located at `~/.config/msauter/custom/sourced` are autoloaded and ignored
-by git.
+Files located at `~/.config/msauter/custom/sourced` and ending in `.zsh` are
+autoloaded by `.zshrc`.
 
 Files located at `~/.config/msauter/custom/linked` are symlinked to `$HOME` by
-the `ìnstall` script and ignored by git.
+the `ìnstall` script.
+
+All files in `~/.config/msauter/custom/sourced` and
+`~/.config/msauter/custom/linked` are ignored by git.
 
 # Vim
 
