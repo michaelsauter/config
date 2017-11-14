@@ -22,7 +22,7 @@
   cleanup = "!git branch --merged | grep -v 'master' | xargs -n 1 git branch -d"
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor = nvim
 [credential]
   helper = osxkeychain
 [color]
