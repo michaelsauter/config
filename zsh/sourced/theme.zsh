@@ -21,7 +21,7 @@ prompt_git() {
       ZSH_THEME_GIT_PROMPT_DIRTY='±'
         dirty=$(parse_git_dirty)
         ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
-        local output="${ref/refs\/heads\//⭠  }$dirty"
+        local output="${ref/refs\/heads\//}$dirty"
         if [[ -n $dirty ]]; then
           echo -n "%F{red}$output%f"
         else
