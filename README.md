@@ -4,9 +4,11 @@ Minimal terminal configuration. Installs basic packages, ZSH and tmux.
 
 # Setup
 
-* `git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell`
-* `git clone https://github.com/michaelsauter/config.git ~/.config/msauter`
-* `~/.config/msauter/install`
+```sh
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+git clone https://github.com/michaelsauter/config.git ~/.config/msauter
+~/.config/msauter/install
+```
 
 # Customization
 
@@ -18,5 +20,5 @@ the `ìnstall` script and ignored by git.
 
 # Vim
 
-For Neovim configuration, please go to
-[nvim-config](https://github.com/michaelsauter/nvim-config).
+Neovim is installed, but not configured. Please check out the
+[nvim configuration](https://github.com/michaelsauter/nvim).
