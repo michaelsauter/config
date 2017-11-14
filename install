@@ -50,7 +50,7 @@ fi
 # Symlinks
 set +ex
 
-for source in $(find ./*/linked -type f); do
+for source in $(find ~/.config/msauter/*/linked -type f); do
   target=~/$(basename "$source")
   echo "ln -s $source $target"
   ln -s $source $target
