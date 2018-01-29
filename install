@@ -17,6 +17,14 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   which nvim || brew install neovim
 
+  which go || (
+    curl -O https://dl.google.com/go/go1.9.3.darwin-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.9.3.darwin-amd64.tar.gz
+    rm go1.9.3.darwin-amd64.tar.gz
+  )
+
+  which 2fa || go get -u rsc.io/2fa
+
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
     sudo chsh -s /bin/zsh `whoami`
