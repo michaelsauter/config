@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# Written by Michael Sauter
+#
+# Inspired by http://mislav.net/2014/02/hidden-documentation/
+#
+# Put this anywhere on your $PATH. Then git will see it
+# and you'll be able to do `git merge-request`.
+# Please note that `git-blame-sha` is required.
+#
+# Show merge request for commit:
+#   $ git merge-request SHA
+#   $ git merge-request FILE:LINE
+#
+# Show merge request for a specific line:
+#   $ git merge-request 4ae1522d
+#   $ git merge-request app/models/account.rb:5
+
+set -e
+
+if [ -z "$1" ]; then
+  echo "Usage:"
+  echo "  git merge-request SHA"
+  echo "  git merge-request FILE:LINE"
+  echo "Example:"
+  echo "  git merge-request 4ae1522d"
+  echo "  git merge-request app/models/account.rb:5"
+  exit
+fi
+
+if [[ $1 == *":"* ]]; then
+  commit_sha=$(git blame-sha $1)
+else
+  commit_sha=$1
+fi
+
+origin_url=$(git config remote.origin.url)
+origin_url=${origin_url/":"/"/"}
+origin_url=${origin_url/"git@"/"https://"}
+origin_url=${origin_url/".git"/""}
+
+regex="See merge request \!([0-9]*)"
+
+merge_sha=$(git log --merges --ancestry-path --oneline "$commit_sha"..origin | tail -n 1 | awk '{print $1}')
+merge_message=$(git show $merge_sha)
+
+if [[ $merge_message =~ $regex ]]; then
+  merge_request="${BASH_REMATCH[1]}"
+  merge_title=$(git log --oneline "${merge_sha}" | head -n 1)
+  echo "Merge commit:"
+  echo "  ${merge_title}"
+  echo "Merge request:"
+  echo "  ${origin_url}/merge_requests/${merge_request}"
+else
+  echo "No merge request found. Related merges:"
+  git log --merges --ancestry-path --oneline "$commit_sha"..origin | tail
+fi

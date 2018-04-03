@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Written by Michael Sauter
+#
+# Inspired by http://mislav.net/2014/02/hidden-documentation/
+#
+# Put this anywhere on your $PATH. Then git will see it
+# and you'll be able to do `git blame-sha`.
+#
+# Show commit sha for given file and line
+#   $ git blame-sha FILE:LINE
+
+set -e
+
+if [ -z "$1" ]; then
+  echo "Usage:"
+  echo "  git blame-sha FILE:LINE"
+  echo "Example:"
+  echo "  git blame-sha app/models/account.rb:5"
+  exit
+fi
+
+IFS=':' read -ra target <<< "$1"
+
+filename=${target[0]}
+line=${target[1]}
+
+git blame ${filename} -L ${line},${line} | awk '{print $1}'
