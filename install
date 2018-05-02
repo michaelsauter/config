@@ -25,6 +25,8 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   which 2fa || go get -u rsc.io/2fa
 
+  which pwgen || brew install pwgen
+
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
     sudo chsh -s /bin/zsh `whoami`
