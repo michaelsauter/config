@@ -21,6 +21,17 @@ the `ìnstall` script.
 All files in `~/.config/msauter/custom/sourced` and
 `~/.config/msauter/custom/linked` are ignored by git.
 
+# SSH Agent
+
+On MacOS, create the following `.ssh/config`:
+
+```sh
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+```
+
 # Vim
 
 Neovim is installed, but not configured. Please check out the
