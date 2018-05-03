@@ -81,3 +81,6 @@ else
   echo "ln -sf /opt/sublime_text/sublime_text /usr/local/bin/sublime"
   ln -sf /opt/sublime_text/sublime_text /usr/local/bin/sublime
 fi
+
+# Theme
+base16_eighties
