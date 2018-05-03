@@ -23,7 +23,7 @@ if [[ $(uname) = 'Darwin' ]]; then
     rm go1.10.darwin-amd64.tar.gz
   )
 
-  which 2fa || go get -u rsc.io/2fa
+  which 2fa || /usr/local/go/bin/go get -u rsc.io/2fa
 
   which pwgen || brew install pwgen
 
@@ -61,7 +61,7 @@ else
     rm go1.10.linux-amd64.tar.gz
   )
 
-  which 2fa || go get -u rsc.io/2fa
+  which 2fa || /usr/local/go/bin/go get -u rsc.io/2fa
 
 fi
 
