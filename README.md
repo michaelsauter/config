@@ -32,6 +32,12 @@ Host *
   IdentityFile ~/.ssh/id_rsa
 ```
 
+# Copying in tmux
+
+If using iTerm2, you'll need to enable "Applications in terminal may access
+clipboard" in the preferences to automatically copy text selected with the mouse
+while respecting panes.
+
 # Vim
 
 Neovim is installed, but not configured. Please check out the
