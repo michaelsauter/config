@@ -27,6 +27,8 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   which pwgen || brew install pwgen
 
+  which jq || brew install jq
+
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
     sudo chsh -s /bin/zsh `whoami`
@@ -63,6 +65,7 @@ else
 
   which 2fa || /usr/local/go/bin/go get -u rsc.io/2fa
 
+  which jq || sudo apt-get install jq
 fi
 
 # Symlinks
