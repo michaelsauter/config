@@ -1,7 +1,5 @@
-[user]
-  name = Michael Sauter
-  email = mail@michaelsauter.net
-  signingkey = 7C60D5D6
+[include]
+  path = .gituser
 [alias]
   co = checkout
   ci = commit

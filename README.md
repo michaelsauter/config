@@ -21,6 +21,17 @@ the `ìnstall` script.
 All files in `~/.config/msauter/custom/sourced` and
 `~/.config/msauter/custom/linked` are ignored by git.
 
+# Git
+
+Create a `~/.gituser` file for the right user:
+
+```sh
+[user]
+  name = Michael Sauter
+  email = mail@michaelsauter.net
+  signingkey=7C60D5D6
+```
+
 # SSH Agent
 
 On MacOS, create the following `.ssh/config`:
