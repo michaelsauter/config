@@ -68,15 +68,14 @@ else
   which jq || sudo apt-get install jq
 fi
 
-# Symlinks
 set +ex
 
+# Symlinks
 for source in $(find ~/.config/msauter/*/linked -type f); do
   target=~/$(basename "$source")
   echo "ln -sf $source $target"
   ln -sf $source $target
 done
-
 if [[ $(uname) = 'Darwin' ]]; then
   echo "ln -sf /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime"
   ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
@@ -84,6 +83,13 @@ else
   echo "ln -sf /opt/sublime_text/sublime_text /usr/local/bin/sublime"
   ln -sf /opt/sublime_text/sublime_text /usr/local/bin/sublime
 fi
+
+# Copies
+# for source in $(find ~/.config/msauter/*/copied -type f); do
+#   target=~/$(basename "$source")
+#   echo "cp $source $target"
+#   cp $source $target
+# done
 
 # Theme
 base16_eighties
