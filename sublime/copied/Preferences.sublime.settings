@@ -1,0 +1,13 @@
+{
+	"color_scheme": "Packages/Base16 Eighties Dark Color Scheme/base16-eighties-dark.tmTheme",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"theme": "Adaptive.sublime-theme",
+	"rulers": [80],
+	"ensure_newline_at_eof_on_save": true,
+}
+
