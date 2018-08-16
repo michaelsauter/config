@@ -27,3 +27,5 @@
   ui = true
 [push]
   default = current
+[pull]
+  default = current
