@@ -2,6 +2,7 @@
   path = .gituser
 [alias]
   co = checkout
+  ct = checkout --track
   ci = commit
   st = status
   br = branch
