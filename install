@@ -29,6 +29,12 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   which jq || brew install jq
 
+  which bat || brew install bat
+
+  which rlwrap || brew install rlwrap
+
+  /usr/local/go/bin/go get -u github.com/containous/yaegi/cmd/yaegi
+
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
     sudo chsh -s /bin/zsh `whoami`
