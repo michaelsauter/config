@@ -6,6 +6,7 @@ Minimal terminal configuration. Installs basic packages, ZSH and tmux.
 
 ```sh
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+git clone https://github.com/martinlindhe/base16-iterm2 ~/.config/base16-iterm2
 git clone git@github.com:michaelsauter/config.git ~/.config/msauter
 ~/.config/msauter/install
 ```
@@ -43,11 +44,17 @@ Host *
   IdentityFile ~/.ssh/id_rsa
 ```
 
-# Copying in tmux
+# iTerm Setup
 
-If using iTerm2, you'll need to enable "Applications in terminal may access
-clipboard" in the preferences to automatically copy text selected with the mouse
-while respecting panes.
+In the preferences go to "Profiles > Colors" and under "Color Presets", click
+"Import ...". Then navigate to `~/.config/base16-iterm2/itermcolors`. You can
+press `Cmd+Shift+.` to show hidden folders. Select
+`base16-eighties.itermcolors`, and then click on "Color Presets" and choose the
+new item `base16-eighties`.
+
+To enable copying in tmux, check "Applications in terminal may access
+clipboard" in "General > Selections" to automatically copy text selected with
+the mouse while respecting panes.
 
 # Vim
 

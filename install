@@ -5,7 +5,7 @@ set -eux
 
 if [[ $(uname) = 'Darwin' ]]; then
 
-  which brew || ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
   brew update
 
@@ -33,7 +33,7 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   which rlwrap || brew install rlwrap
 
-  /usr/local/go/bin/go get -u github.com/containous/yaegi/cmd/yaegi
+  which yaegi || /usr/local/go/bin/go get -u github.com/containous/yaegi/cmd/yaegi
 
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
@@ -64,12 +64,14 @@ else
   )
 
   which go || (
-    curl -O https://dl.google.com/go/go1.10.linux-amd64.tar.gz
-    sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
-    rm go1.10.linux-amd64.tar.gz
+    curl -O https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+    rm go1.13.linux-amd64.tar.gz
   )
 
   which 2fa || /usr/local/go/bin/go get -u rsc.io/2fa
+
+  which yaegi || /usr/local/go/bin/go get -u github.com/containous/yaegi/cmd/yaegi
 
   which jq || sudo apt-get install jq
 fi
@@ -93,3 +95,5 @@ fi
 
 # Theme
 base16_eighties
+
+echo "Done."
