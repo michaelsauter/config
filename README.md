@@ -49,8 +49,8 @@ Host *
 In the preferences go to "Profiles > Colors" and under "Color Presets", click
 "Import ...". Then navigate to `~/.config/base16-iterm2/itermcolors`. You can
 press `Cmd+Shift+.` to show hidden folders. Select
-`base16-eighties.itermcolors`, and then click on "Color Presets" and choose the
-new item `base16-eighties`.
+`base16-eighties-256.itermcolors`, and then click on "Color Presets" and choose the
+new item `base16-eighties-256`.
 
 To enable copying in tmux, check "Applications in terminal may access
 clipboard" in "General > Selections" to automatically copy text selected with
