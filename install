@@ -30,6 +30,8 @@ if [[ $(uname) = 'Darwin' ]]; then
   which jq || brew install jq
 
   which bat || brew install bat
+  
+  which mkcert || brew install mkcert
 
   which rlwrap || brew install rlwrap
 
