@@ -87,14 +87,6 @@ for source in $(find ~/.config/msauter/*/linked -type f); do
   ln -sf $source $target
 done
 
-if [[ $(uname) = 'Darwin' ]]; then
-  echo "ln -sf /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime"
-  ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
-else
-  echo "ln -sf /opt/sublime_text/sublime_text /usr/local/bin/sublime"
-  ln -sf /opt/sublime_text/sublime_text /usr/local/bin/sublime
-fi
-
 # Theme
 base16_eighties
 
