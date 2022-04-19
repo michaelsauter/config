@@ -5,37 +5,37 @@ set -eux
 
 if [[ $(uname) = 'Darwin' ]]; then
 
-  which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  command -v brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
   brew update
 
-  which git || brew install git
+  command -v git || brew install git
 
-  which ag || brew install the_silver_searcher
+  command -v ag || brew install the_silver_searcher
 
-  which tmux || brew install tmux
+  command -v tmux || brew install tmux
 
-  which nvim || brew install neovim
+  command -v nvim || brew install neovim
 
-  which go || (
+  command -v go || (
     curl -O https://dl.google.com/go/go1.13.darwin-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.13.darwin-amd64.tar.gz
     rm go1.13.darwin-amd64.tar.gz
   )
 
-  which 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
+  command -v 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
 
-  which pwgen || brew install pwgen
+  command -v pwgen || brew install pwgen
 
-  which jq || brew install jq
+  command -v jq || brew install jq
 
-  which bat || brew install bat
+  command -v bat || brew install bat
   
-  which mkcert || brew install mkcert
+  command -v mkcert || brew install mkcert
 
-  which rlwrap || brew install rlwrap
+  command -v rlwrap || brew install rlwrap
 
-  which yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
+  command -v yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
 
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
@@ -48,34 +48,34 @@ else
 
   sudo apt-get install -y software-properties-common
 
-  which git || sudo apt-get install -y git
+  command -v git || sudo apt-get install -y git
 
-  which ag || (
+  command -v ag || (
     sudo apt-get install -y silversearcher-ag;
     sudo dpkg-divert --local --divert /usr/bin/ag --rename --add /usr/bin/silversearcher-ag
   )
 
-  which tmux || sudo apt-get install -y tmux
+  command -v tmux || sudo apt-get install -y tmux
 
-  which zsh || sudo apt-get install -y zsh
+  command -v zsh || sudo apt-get install -y zsh
 
-  which nvim || (
+  command -v nvim || (
     sudo add-apt-repository ppa:neovim-ppa/stable;
     sudo apt-get update -y;
     sudo apt-get install -y neovim
   )
 
-  which go || (
+  command -v go || (
     curl -O https://dl.google.com/go/go1.13.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
     rm go1.13.linux-amd64.tar.gz
   )
 
-  which 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
+  command -v 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
 
-  which yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
+  command -v yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
 
-  which jq || sudo apt-get install jq
+  command -v jq || sudo apt-get install jq
 fi
 
 # Symlinks
