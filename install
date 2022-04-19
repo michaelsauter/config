@@ -23,7 +23,7 @@ if [[ $(uname) = 'Darwin' ]]; then
     rm go1.13.darwin-amd64.tar.gz
   )
 
-  which 2fa || /usr/local/go/bin/go get -u rsc.io/2fa
+  which 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
 
   which pwgen || brew install pwgen
 
@@ -35,7 +35,7 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   which rlwrap || brew install rlwrap
 
-  which yaegi || /usr/local/go/bin/go get -u github.com/containous/yaegi/cmd/yaegi
+  which yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
 
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
@@ -71,9 +71,9 @@ else
     rm go1.13.linux-amd64.tar.gz
   )
 
-  which 2fa || /usr/local/go/bin/go get -u rsc.io/2fa
+  which 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
 
-  which yaegi || /usr/local/go/bin/go get -u github.com/containous/yaegi/cmd/yaegi
+  which yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
 
   which jq || sudo apt-get install jq
 fi
