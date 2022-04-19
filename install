@@ -30,6 +30,8 @@ if [[ $(uname) = 'Darwin' ]]; then
   command -v jq || brew install jq
 
   command -v bat || brew install bat
+
+  command -v shellcheck || brew install shellcheck
   
   command -v mkcert || brew install mkcert
 
