@@ -30,5 +30,6 @@
   default = current
 [pull]
   default = current
+	ff = only
 [diff]
 	noprefix = true
