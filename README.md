@@ -1,6 +1,6 @@
 # Overview
 
-Minimal terminal configuration. Installs basic packages, ZSH and tmux.
+Minimal terminal configuration. Installs basic packages, zsh and tmux.
 
 # Setup
 
@@ -29,7 +29,7 @@ Create a `~/.gituser` file for the right user:
 ```sh
 [user]
   name = Michael Sauter
-  email = mail@michaelsauter.net
+  email = my.email@example.com
   signingkey=7C60D5D6
 ```
 
