@@ -43,6 +43,8 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   command -v yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
 
+  ls -la /Applications/Jumpcut.app >/dev/null || brew install --cask jumpcut
+
   [[ $SHELL = "/bin/zsh" ]] || (
     brew install zsh;
     sudo chsh -s /bin/zsh $(whoami)
