@@ -27,6 +27,8 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   command -v 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
 
+  command -v govulncheck || /usr/local/go/bin/go install golang.org/x/vuln/cmd/govulncheck@latest
+
   command -v pwgen || brew install pwgen
 
   command -v jq || brew install jq
@@ -76,6 +78,8 @@ else
   )
 
   command -v 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
+
+  command -v govulncheck || /usr/local/go/bin/go install golang.org/x/vuln/cmd/govulncheck@latest
 
   command -v yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
 
