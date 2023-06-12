@@ -84,6 +84,8 @@ else
   command -v govulncheck || /usr/local/go/bin/go install golang.org/x/vuln/cmd/govulncheck@latest
 
   command -v yaegi || /usr/local/go/bin/go install github.com/traefik/yaegi/cmd/yaegi@latest
+  
+  command -v gron || /usr/local/go/bin/go install github.com/tomnomnom/gron@latest
 
   command -v jq || sudo apt-get install jq
 fi
