@@ -44,7 +44,12 @@ Host *
   IdentityFile ~/.ssh/id_rsa
 ```
 
-# iTerm Setup
+On Linux, create the following `~/.config/msauter/custom/sourced/ssh-agent.zsh`:
+```sh
+eval $(keychain --eval ~/.ssh/id_ed25519)
+```
+
+# Mac: iTerm Setup
 
 In the preferences go to "Profiles > Colors" and under "Color Presets", click
 "Import ...". Then navigate to `~/.config/base16-iterm2/itermcolors`. You can
