@@ -60,6 +60,8 @@ else
 
   command -v git || sudo apt-get install -y git
 
+  command -v keychain || sudo apt install -y keychain
+
   command -v ag || (
     sudo apt-get install -y silversearcher-ag;
     sudo dpkg-divert --local --divert /usr/bin/ag --rename --add /usr/bin/silversearcher-ag
