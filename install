@@ -20,9 +20,9 @@ if [[ $(uname) = 'Darwin' ]]; then
   command -v nvim || brew install neovim
 
   command -v go || (
-    curl -O https://go.dev/dl/go1.19.2.darwin-amd64.tar.gz
-    sudo tar -C /usr/local -xzf go1.19.2.darwin-amd64.tar.gz
-    rm go1.19.2.darwin-amd64.tar.gz
+    curl -O https://go.dev/dl/go1.25.3.darwin-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.25.3.darwin-amd64.tar.gz
+    rm go1.25.3.darwin-amd64.tar.gz
   )
 
   command -v 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
@@ -78,9 +78,9 @@ else
   )
 
   command -v go || (
-    curl -O https://go.dev/dl/go1.19.2.linux-amd64.tar.gz
-    sudo tar -C /usr/local -xzf go1.19.2.linux-amd64.tar.gz
-    rm go1.19.2.linux-amd64.tar.gz
+    curl -O https://go.dev/dl/go1.25.3.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.25.3.linux-amd64.tar.gz
+    rm go1.25.3.linux-amd64.tar.gz
   )
 
   command -v 2fa || /usr/local/go/bin/go install rsc.io/2fa@latest
