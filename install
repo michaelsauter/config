@@ -13,7 +13,7 @@ if [[ $(uname) = 'Darwin' ]]; then
 
   command -v git || brew install git
 
-  command -v ag || brew install the_silver_searcher
+  command -v rg || brew install ripgrep
 
   command -v tmux || brew install tmux
 
@@ -62,10 +62,7 @@ else
 
   command -v keychain || sudo apt install -y keychain
 
-  command -v ag || (
-    sudo apt-get install -y silversearcher-ag;
-    sudo dpkg-divert --local --divert /usr/bin/ag --rename --add /usr/bin/silversearcher-ag
-  )
+  command -v rg || sudo apt-get install -y ripgrep
 
   command -v tmux || sudo apt-get install -y tmux
 
